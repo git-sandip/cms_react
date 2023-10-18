@@ -1,17 +1,31 @@
 import "../css/App.css";
 import Navbar from "../components/Navbar";
-
+import axios from "axios";
+import { useEffect, useState } from "react";
 const Home = () => {
+  const [products, setproducts] = useState([]);
+
+  const fetchProducts = async () => {
+    const response = await axios.get(
+      "https://652fbacd6c756603295d8edd.mockapi.io/products"
+    );
+    setproducts(response.data);
+  };
+  useEffect(() => {
+    fetchProducts();
+  }, []);
   return (
     <>
       <Navbar />
-      <div className="card">
-        <img src="product-image.jpg" alt="Product Image"></img>
-        <h2 className="product-name">Product Name</h2>
-        <p className="product-description">
-          This is a brief product description. It can be longer if needed.
-        </p>
-      </div>
+      {products.map((products) => {
+        return (
+          <div key={products.id} className="card">
+            <img src={products.productImage} alt="Product Image" />
+            <h2 className="product-name">{products.productName}</h2>
+            <p className="product-description">{products.productDescription}</p>
+          </div>
+        );
+      })}
     </>
   );
 };

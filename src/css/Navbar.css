@@ -1,34 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Style the navigation bar */
 .navbar {
-  background-color: #333;
-  color: #fff;
-  padding: 10px;
+  background-color: #333; /* Background color */
+  overflow: hidden;
 }
 
 .navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px; /* Spacing around the links */
   text-decoration: none;
-  color: #fff;
-  margin: 0 10px;
 }
 
-.card {
-  width: 300px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.card img {
-  width: 100%;
-  border-radius: 5px;
-}
-
-.product-name {
-  font-size: 1.2rem;
-  margin: 10px 0;
-}
-
-.product-description {
-  font-size: 1rem;
-  color: #555;
+/* Style the navigation links when the screen size is small */
+@media screen and (max-width: 600px) {
+  .navbar a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
 }
