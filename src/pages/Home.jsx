@@ -8,7 +8,7 @@ const Home = () => {
 
   const fetchProducts = async () => {
     const response = await axios.get(
-      "https://652fbacd6c756603295d8edd.mockapi.io/products"
+      "https://652fbacd6c756603295d8edd.mockapi.io/product"
     );
     setProducts(response.data);
   };
