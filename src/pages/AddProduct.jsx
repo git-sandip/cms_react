@@ -38,12 +38,14 @@ const AddProduct = () => {
             type="text"
             id="productName"
             name="productName"
+            required
           />
 
           <label htmlFor="productImageURL">Product Image:</label>
           <input
             onChange={(e) => setProductImageURL(e.target.value)}
             type="text"
+            required
             id="productImageURL"
             name="productImageURL"
           />
@@ -52,6 +54,7 @@ const AddProduct = () => {
           <textarea
             onChange={(e) => setProductDesc(e.target.value)}
             id="productDescription"
+            required
             name="productDescription"
             rows="4"
           ></textarea>
@@ -60,6 +63,7 @@ const AddProduct = () => {
           <input
             onChange={(e) => setProductMaterial(e.target.value)}
             type="text"
+            required
             id="productMaterial"
             name="productMaterial"
           />
