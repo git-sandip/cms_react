@@ -18,6 +18,7 @@ const SingleProduct = () => {
   useEffect(() => {
     fetchSingleProduct();
   }, []);
+
   const deleteProduct = async () => {
     await axios.delete(
       `https://652fbacd6c756603295d8edd.mockapi.io/product/${id}`
@@ -27,22 +28,26 @@ const SingleProduct = () => {
   };
 
   return (
-    <div>
+    <>
       <Navbar />
-      <div className="single-product">
-        <img
-          src={product.productImage}
-          alt="Product Image"
-          className="product-image"
-        />
-        <div className="product-details">
-          <h1 className="product-title">{product.productName}</h1>
-          <p className="product-description">{product.productDescription}</p>
-          <p className="product-material">{product.productMaterial}</p>
-          <button onClick={deleteProduct}>Delete</button>
+      <div className="single-product-container">
+        <div className="single-product">
+          <img
+            src={product.productImage}
+            alt="Product Image"
+            className="product-image"
+          />
+          <div className="product-details">
+            <h1 className="product-title">{product.productName}</h1>
+            <p className="product-description">{product.productDescription}</p>
+            <p className="product-material">{product.productMaterial}</p>
+            <button className="delete-button" onClick={deleteProduct}>
+              Delete
+            </button>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
