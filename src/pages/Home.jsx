@@ -28,6 +28,7 @@ const Home = () => {
             <h2 className="product-name">{product.productName}</h2>
             <p className="product-description">{product.productDescription}</p>
             <Link to={`/singleProduct/${product.id}`}>See More..</Link>
+            <Link to={`/editProduct/${product.id}`}>Edit</Link>
           </div>
         ))}
       </div>
